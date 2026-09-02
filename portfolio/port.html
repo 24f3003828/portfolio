@@ -1,0 +1,3782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Tanushree's Portfolio
+    </title>
+
+
+    <!-- =================================================
+         GOOGLE FONTS
+    ================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =================================================
+           RESET
+        ================================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            background: #070707;
+
+            color: #ffffff;
+
+            font-family:
+                "Grandover", sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        :root {
+
+            --green: #14db67;
+
+            --dark: #070707;
+
+            --card: #111111;
+
+            --muted: #888888;
+
+            --border:
+                rgba(255,255,255,.10);
+
+        }
+        @font-face {
+    font-family: "Grandover.ttf";
+    src: url("Grandover.ttf") format("ttf");
+    font-weight: 100 900;
+    font-style: normal;
+    }
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(1100px, calc(100% - 40px));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 18px;
+
+    background: rgba(10, 10, 11, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 20px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    z-index: 1000;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+
+    padding: 8px 10px;
+
+    transition: 0.3s ease;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+
+
+/* ================================
+   NAV LINKS
+================================ */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    position: relative;
+
+    display: inline-block;
+
+    color: rgba(255, 255, 255, 0.58);
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 8px 0;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Underline animation */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 2px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--green);
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ================================
+   LET'S TALK BUTTON
+================================ */
+
+.contact-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #06110c;
+    background: var(--green);
+
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    padding: 13px 20px;
+
+    border-radius: 13px;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.contact-nav:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(101, 230, 176, 0.20);
+
+    background: #7aefc0;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    nav {
+        top: 12px;
+
+        width: calc(100% - 24px);
+
+        padding: 11px 12px;
+
+        border-radius: 16px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .contact-nav {
+        padding: 11px 15px;
+        font-size: 12px;
+    }
+}
+
+/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    max-width: 1250px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 150px 40px 100px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+    position: relative;
+
+    width: 100%;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+
+.small-title {
+
+    color: var(--green);
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    margin-bottom: 25px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.hero h1 {
+
+    margin: 0;
+
+    width: 68%;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(65px, 10vw, 145px);
+
+    font-weight: 800;
+
+    line-height: .84;
+
+    letter-spacing: -7px;
+
+    color: #ffffff;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.hero h1 span {
+
+    color: var(--green);
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-sub {
+
+    width: 100%;
+
+    max-width: 580px;
+
+    margin: 45px 0 0 0;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.hero-bottom {
+
+    margin-top: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 21px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+
+.btn:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+.btn-main {
+
+    background: var(--green);
+
+    color: #07120d;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   HERO PHOTO
+========================================================= */
+
+.hero-photo {
+
+    position: absolute;
+
+    right: 2%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 370px;
+
+    height: 500px;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PHOTO BLOB
+========================================================= */
+
+.photo-blob {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background: #222;
+
+    border-radius:
+        58% 42% 63% 37%
+        /
+        42% 56% 44% 58%;
+
+    animation: blobMove 8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.photo-blob img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   GREEN PHOTO GLOW
+========================================================= */
+
+.hero-photo::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: 15%;
+    left: 5%;
+
+    background: rgba(0, 230, 118, .08);
+
+    filter: blur(90px);
+
+    border-radius: 50%;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   BLOB ANIMATION
+========================================================= */
+
+@keyframes blobMove {
+
+    0% {
+
+        border-radius:
+            58% 42% 63% 37%
+            /
+            42% 56% 44% 58%;
+    }
+
+    25% {
+
+        border-radius:
+            42% 58% 48% 52%
+            /
+            56% 43% 57% 44%;
+    }
+
+    50% {
+
+        border-radius:
+            63% 37% 42% 58%
+            /
+            48% 61% 39% 52%;
+    }
+
+    75% {
+
+        border-radius:
+            47% 53% 60% 40%
+            /
+            61% 45% 55% 39%;
+    }
+
+    100% {
+
+        border-radius:
+            58% 42% 63% 37%
+            /
+            42% 56% 44% 58%;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+
+        min-height: auto;
+
+        padding: 140px 30px 80px;
+
+        align-items: flex-start;
+    }
+
+
+    .hero h1 {
+
+        width: 100%;
+
+        font-size: clamp(65px, 13vw, 110px);
+
+        letter-spacing: -5px;
+    }
+
+
+    .hero-sub {
+
+        max-width: 520px;
+    }
+
+
+    .hero-photo {
+
+        position: relative;
+
+        right: auto;
+        top: auto;
+
+        transform: none;
+
+        width: 280px;
+        height: 380px;
+
+        margin: 60px auto 0;
+    }
+
+
+    .hero {
+
+        flex-direction: column;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+
+        padding: 120px 20px 70px;
+    }
+
+
+    .small-title {
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+
+        white-space: normal;
+
+        line-height: 1.6;
+    }
+
+
+    .hero h1 {
+
+        font-size: clamp(55px, 17vw, 90px);
+
+        letter-spacing: -4px;
+    }
+
+
+    .hero-sub {
+
+        font-size: 15px;
+
+        margin-top: 30px;
+    }
+
+
+    .buttons {
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero-photo {
+
+        width: 240px;
+
+        height: 320px;
+
+        margin-top: 50px;
+    }
+
+}
+
+
+
+        /* =================================================
+           GENERAL SECTION
+        ================================================== */
+
+        section {
+
+            max-width: 1200px;
+
+            margin:
+                0 auto;
+
+            padding:
+                130px 30px;
+
+        }
+
+
+        .section-label {
+
+            color:
+                var(--green);
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        section h2 {
+
+            font-family:
+                "Space Grotesk";
+
+            font-size:
+                clamp(50px, 8vw, 100px);
+
+            line-height: .85;
+
+            letter-spacing:
+                -6px;
+
+        }
+
+
+        section h2 span {
+
+            color:
+                var(--green);
+
+        }
+
+.about-grid {
+    margin-top: 55px;
+
+    display: grid;
+    grid-template-columns: 1.4fr .6fr;
+    gap: 20px;
+}
+
+.about-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    padding: 40px;
+}
+
+.about-main {
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+}
+
+.about-main p {
+    font-size: 25px;
+    line-height: 1.5;
+    color: #c7c7ca;
+}
+
+.highlight {
+    color: var(--green);
+}
+
+.about-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-side h3 {
+    font-size: 45px;
+    font-family: "Space Grotesk";
+}
+
+.about-side p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ================= EDUCATION ================= */
+/* =========================================
+   EDUCATION
+========================================= */
+
+.education {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 18px;
+    padding-top: 40px;
+}
+
+
+/* Each education item */
+
+.education-card {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 180px 1fr;
+
+    align-items: start;
+
+    gap: 50px;
+
+    padding: 35px 30px;
+
+    box-sizing: border-box;
+
+    /* Grey glass effect */
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 18px;
+
+    /* Glass blur */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    /* Soft depth */
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 8px 30px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Subtle glass highlight */
+
+.education-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.055),
+        transparent 40%
+    );
+
+    pointer-events: none;
+}
+
+
+/* Hover */
+
+.education-card:hover {
+    background: rgba(255, 255, 255, 0.055);
+
+    border-color: rgba(255, 255, 255, 0.18);
+
+    transform: translateY(-3px);
+}
+
+/* Year */
+
+.edu-year {
+    color: #00e676;
+
+    font-size: 16px;
+
+    white-space: nowrap;
+
+    padding-top: 5px;
+}
+
+
+/* Education title */
+
+.education-card h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    max-width: 600px;
+}
+
+
+/* Institution */
+
+.education-card p {
+    margin-top: 14px;
+
+    color: #777;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    max-width: 500px;
+}
+
+
+/* Remove unwanted spacing */
+
+.education-card > div {
+    margin: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .education-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+
+        padding: 30px 0;
+    }
+
+    .edu-year {
+        font-size: 14px;
+    }
+
+    .education-card h3 {
+        font-size: 24px;
+    }
+
+}
+/* ================= EXPERIENCE ================= */
+
+.experience {
+    margin-top: 50px;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 220px 1fr auto;
+
+    padding: 27px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    align-items: center;
+
+    transition: .3s;
+}
+
+.experience-item:hover {
+    padding-left: 10px;
+}
+
+.company {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.role {
+    font-family: "Space Grotesk";
+    font-size: 21px;
+}
+
+.date {
+    color: #666;
+    font-size: 11px;
+}
+
+/* ================= SKILLS ================= */
+
+.skills {
+    margin-top: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill {
+    padding: 15px 21px;
+
+    border: 1px solid var(--border);
+    border-radius: 100px;
+
+    color: #aaa;
+    background: var(--card);
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.skill:hover {
+    color: #07120d;
+    background: var(--green);
+    border-color: var(--green);
+}
+
+
+
+        /* =================================================
+           WORK SECTION
+        ================================================== */
+
+        #work {
+
+            max-width: none;
+
+            padding-left: 0;
+
+            padding-right: 0;
+
+            overflow: hidden;
+
+        }
+
+
+        .work-heading {
+
+            max-width: 1200px;
+
+            margin:
+                0 auto 60px;
+
+            padding:
+                0 30px;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content:
+                space-between;
+
+            gap: 50px;
+
+        }
+
+
+        .work-heading p {
+
+            max-width: 300px;
+
+            color:
+                var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =================================================
+           GALLERY
+        ================================================== */
+
+        .gallery-window {
+
+            width: 100%;
+
+            overflow: hidden;
+
+            position: relative;
+
+            padding:
+                15px 0 30px;
+
+        }
+
+
+        .gallery-track {
+
+            display: flex;
+
+            width: max-content;
+
+            gap: 20px;
+
+            animation:
+                moveRight 60s
+                linear
+                infinite;
+
+        }
+
+
+        .gallery-window:hover
+        .gallery-track {
+
+            animation-play-state:
+                paused;
+
+        }
+
+
+        .gallery-group {
+
+            display: flex;
+
+            gap: 20px;
+
+            flex-shrink: 0;
+
+        }
+
+
+        /* =================================================
+           GALLERY CARD
+        ================================================== */
+
+        .gallery-item {
+
+            width: 350px;
+
+            height: 440px;
+
+            flex-shrink: 0;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background:
+                #111;
+
+            border:
+                1px solid var(--border);
+
+            cursor: pointer;
+
+            transition:
+                transform .4s ease,
+                border-color .4s ease;
+
+        }
+
+
+        .gallery-item:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(101,230,176,.55);
+
+        }
+
+
+        /* =================================================
+           IMAGE
+        ================================================== */
+
+        .gallery-image {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+
+            background:
+                #111;
+
+            transition:
+                transform .6s ease;
+
+        }
+
+
+        .gallery-item:hover
+        .gallery-image {
+
+            transform:
+                scale(1.035);
+
+        }
+
+
+        /* =================================================
+           VIDEO PREVIEW
+        ================================================== */
+
+        .gallery-video {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            background:
+                #080808;
+
+        }
+
+
+        /* =================================================
+           PDF PREVIEW
+        ================================================== */
+
+        .pdf-card {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #181818,
+                    #0b0b0b
+                );
+
+        }
+
+
+        .pdf-icon {
+
+            width: 90px;
+
+            height: 110px;
+
+            border-radius: 10px;
+
+            background:
+                #e84c3d;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-family:
+                "Space Grotesk";
+
+            font-weight:
+                700;
+
+            font-size:
+                25px;
+
+            position: relative;
+
+        }
+
+
+        .pdf-icon::after {
+
+            content:
+                "PDF";
+
+            position: absolute;
+
+            bottom: -35px;
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                2px;
+
+            color:
+                #888;
+
+        }
+
+
+        /* =================================================
+           TYPE BADGE
+        ================================================== */
+
+        .work-type {
+
+            position: absolute;
+
+            top: 15px;
+
+            left: 15px;
+
+            z-index: 5;
+
+            padding:
+                7px 11px;
+
+            border-radius:
+                30px;
+
+            background:
+                rgba(0,0,0,.65);
+
+            backdrop-filter:
+                blur(10px);
+
+            font-size:
+                9px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                1.5px;
+
+        }
+
+
+        /* =================================================
+           FILE NAME
+        ================================================== */
+
+        .gallery-label {
+
+            position: absolute;
+
+            bottom: 15px;
+
+            left: 15px;
+
+            right: 15px;
+
+            padding:
+                12px 14px;
+
+            border-radius:
+                12px;
+
+            background:
+                rgba(0,0,0,.70);
+
+            backdrop-filter:
+                blur(14px);
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                .7px;
+
+            white-space:
+                nowrap;
+
+            overflow:
+                hidden;
+
+            text-overflow:
+                ellipsis;
+
+        }
+
+
+        /* =================================================
+           VIDEO PLAY BUTTON
+        ================================================== */
+
+        .video-play {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width: 70px;
+
+            height: 70px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                rgba(0,0,0,.70);
+
+            border:
+                1px solid
+                rgba(255,255,255,.25);
+
+            font-size:
+                24px;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        /* =================================================
+           RIGHTWARD INFINITE MOVEMENT
+        ================================================== */
+
+        @keyframes moveRight {
+
+            from {
+
+                transform:
+                    translateX(-50%);
+
+            }
+
+            to {
+
+                transform:
+                    translateX(0);
+
+            }
+
+        }
+
+
+        /* =================================================
+           SKILLS
+        ================================================== */
+
+        .skills-grid {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 50px;
+
+        }
+
+
+        .skill {
+
+            padding:
+                13px 18px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                50px;
+
+            color:
+                #aaa;
+
+            font-size:
+                12px;
+
+        }
+
+
+        /* =================================================
+           CONTACT
+        ================================================== */
+
+        .contact {
+
+            text-align:
+                center;
+
+        }
+
+
+        .contact h2 {
+
+            max-width:
+                900px;
+
+            margin:
+                auto;
+
+        }
+
+
+        .contact-button-large {
+
+            display:
+                inline-block;
+
+            margin-top:
+                45px;
+
+            padding:
+                18px 30px;
+
+            border-radius:
+                14px;
+
+            background:
+                var(--green);
+
+            color:
+                #06110c;
+
+            text-decoration:
+                none;
+
+            font-weight:
+                700;
+
+        }
+
+
+        /* =================================================
+           MODAL
+        ================================================== */
+
+        .work-modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index:
+                9999;
+
+            display:
+                none;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                rgba(0,0,0,.94);
+
+            backdrop-filter:
+                blur(20px);
+
+        }
+
+
+        .work-modal.active {
+
+            display:
+                flex;
+
+        }
+
+
+        .modal-content {
+
+            width:
+                min(82vw, 1100px);
+
+            height:
+                min(82vh, 800px);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+        }
+
+
+        .modal-content img {
+
+            max-width:
+                100%;
+
+            max-height:
+                100%;
+
+            object-fit:
+                contain;
+
+        }
+
+
+        .modal-content iframe {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            border:
+                none;
+
+            border-radius:
+                12px;
+
+        }
+
+
+        .modal-content video {
+
+            max-width:
+                100%;
+
+            max-height:
+                100%;
+
+        }
+ /* =================================================
+   CONTACT SOCIAL LINKS
+================================================= */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 55px;
+}
+
+
+/* Individual icon */
+
+.social-links a {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #292929;
+    border-radius: 50%;
+
+    background: #0a0a0a;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 23px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* Hover */
+
+.social-links a:hover {
+    transform: translateY(-7px);
+
+    background: #00e676;
+
+    border-color: #00e676;
+
+    color: #000000;
+}
+
+
+/* Unstop */
+
+.unstop-icon {
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+/* Fiverr */
+
+.fiverr-icon {
+    font-family: Arial, sans-serif;
+
+    font-size: 19px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .social-links {
+        gap: 12px;
+        margin-top: 35px;
+    }
+
+    .social-links a {
+        width: 50px;
+        height: 50px;
+        font-size: 19px;
+    }
+
+}
+
+        /* =================================================
+           MODAL BUTTONS
+        ================================================== */
+
+        .modal-close,
+        .modal-prev,
+        .modal-next {
+
+            position:
+                absolute;
+
+            z-index:
+                10;
+
+            width:
+                50px;
+
+            height:
+                50px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,255,255,.08);
+
+            color:
+                white;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            cursor:
+                pointer;
+
+            transition:
+                .3s;
+
+        }
+
+
+        .modal-close:hover,
+        .modal-prev:hover,
+        .modal-next:hover {
+
+            background:
+                var(--green);
+
+            color:
+                #06110c;
+
+        }
+
+
+        .modal-close {
+
+            top:
+                25px;
+
+            right:
+                30px;
+
+            font-size:
+                30px;
+
+        }
+
+
+        .modal-prev {
+
+            left:
+                30px;
+
+            top:
+                50%;
+
+            transform:
+                translateY(-50%);
+
+            font-size:
+                35px;
+
+        }
+
+
+        .modal-next {
+
+            right:
+                30px;
+
+            top:
+                50%;
+
+            transform:
+                translateY(-50%);
+
+            font-size:
+                35px;
+
+        }
+
+
+        .modal-title {
+
+            position:
+                absolute;
+
+            bottom:
+                25px;
+
+            left:
+                50%;
+
+            transform:
+                translateX(-50%);
+
+            max-width:
+                70%;
+
+            padding:
+                10px 18px;
+
+            border-radius:
+                30px;
+
+            background:
+                rgba(0,0,0,.75);
+
+            font-size:
+                11px;
+
+            text-align:
+                center;
+
+        }
+
+
+        /* =================================================
+           LOADING
+        ================================================== */
+
+        .gallery-loading {
+
+            width:
+                100vw;
+
+            min-height:
+                440px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            color:
+                var(--muted);
+
+            font-size:
+                12px;
+
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================== */
+
+        @media(max-width: 750px) {
+
+
+            nav {
+
+                width:
+                    94%;
+
+            }
+
+
+            .nav-links {
+
+                display:
+                    none;
+
+            }
+
+
+            .hero {
+
+                padding:
+                    150px 22px 80px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    65px;
+
+                letter-spacing:
+                    -5px;
+
+            }
+
+
+            section {
+
+                padding:
+                    90px 22px;
+
+            }
+
+
+            .work-heading {
+
+                padding:
+                    0 22px;
+
+                display:
+                    block;
+
+            }
+
+
+            .work-heading p {
+
+                margin-top:
+                    25px;
+
+            }
+
+
+            .gallery-item {
+
+                width:
+                    280px;
+
+                height:
+                    360px;
+
+            }
+
+
+            .gallery-group {
+
+                gap:
+                    12px;
+
+            }
+
+
+            .gallery-track {
+
+                gap:
+                    12px;
+
+                animation-duration:
+                    45s;
+
+            }
+
+
+            .modal-content {
+
+                width:
+                    90vw;
+
+                height:
+                    78vh;
+
+            }
+
+
+            .modal-prev {
+
+                left:
+                    10px;
+
+            }
+
+
+            .modal-next {
+
+                right:
+                    10px;
+
+            }
+
+
+            .modal-close {
+
+                right:
+                    15px;
+
+                top:
+                    15px;
+
+            }
+
+        }
+/* =========================================================
+   FLOATING ✷ SHAPES
+========================================================= */
+
+.floating-shapes {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+/* Individual stars */
+
+.floating-shapes span {
+    position: absolute;
+
+    display: block;
+
+    color: rgba(255, 255, 255, 0.18);
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    user-select: none;
+
+    animation:
+        floatAround 12s ease-in-out infinite,
+        rotateShape 8s linear infinite;
+}
+
+
+/* Different positions */
+
+.floating-shapes span:nth-child(1) {
+    left: 8%;
+    top: 12%;
+    font-size: 18px;
+    animation-duration: 14s, 9s;
+}
+
+.floating-shapes span:nth-child(2) {
+    left: 25%;
+    top: 35%;
+    font-size: 30px;
+    animation-duration: 18s, 11s;
+}
+
+.floating-shapes span:nth-child(3) {
+    left: 48%;
+    top: 18%;
+    font-size: 16px;
+    animation-duration: 13s, 7s;
+}
+
+.floating-shapes span:nth-child(4) {
+    left: 72%;
+    top: 28%;
+    font-size: 26px;
+    animation-duration: 17s, 10s;
+}
+
+.floating-shapes span:nth-child(5) {
+    left: 90%;
+    top: 15%;
+    font-size: 20px;
+    animation-duration: 15s, 8s;
+}
+
+.floating-shapes span:nth-child(6) {
+    left: 15%;
+    top: 62%;
+    font-size: 28px;
+    animation-duration: 19s, 12s;
+}
+
+.floating-shapes span:nth-child(7) {
+    left: 38%;
+    top: 78%;
+    font-size: 18px;
+    animation-duration: 16s, 9s;
+}
+
+.floating-shapes span:nth-child(8) {
+    left: 60%;
+    top: 55%;
+    font-size: 32px;
+    animation-duration: 20s, 13s;
+}
+
+.floating-shapes span:nth-child(9) {
+    left: 82%;
+    top: 72%;
+    font-size: 17px;
+    animation-duration: 14s, 8s;
+}
+
+.floating-shapes span:nth-child(10) {
+    left: 5%;
+    top: 88%;
+    font-size: 22px;
+    animation-duration: 18s, 10s;
+}
+
+.floating-shapes span:nth-child(11) {
+    left: 52%;
+    top: 90%;
+    font-size: 20px;
+    animation-duration: 15s, 11s;
+}
+
+.floating-shapes span:nth-child(12) {
+    left: 94%;
+    top: 48%;
+    font-size: 27px;
+    animation-duration: 19s, 9s;
+}
+
+
+/* Floating movement */
+
+@keyframes floatAround {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(35px, -45px);
+    }
+
+    50% {
+        transform: translate(-30px, 35px);
+    }
+
+    75% {
+        transform: translate(45px, 20px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+
+/* Rotation */
+
+@keyframes rotateShape {
+
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+
+}
+        
+    </style>
+
+</head>
+
+
+<body>
+    <!-- FLOATING ✷ SHAPES -->
+<div class="floating-shapes" aria-hidden="true">
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+    <span>✷</span>
+</div>
+
+   <!-- NAVIGATION -->
+
+<nav>
+
+    <a href="#" class="logo">
+        PORTFOLIO<span>.</span>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+    </ul>
+
+    <a href="#contact" class="contact-nav">
+        Let's Talk ↗
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <!-- Floating background shapes -->
+    <div class="hero-circle"></div>
+
+    <!-- Hero content -->
+    <div class="hero-content">
+
+        <div class="small-title">
+            Visual Storyteller · Designer · Data Science Student
+        </div>
+
+        <h1>
+            TANUSHREE
+            <br>
+            <span>DEY.</span>
+        </h1>
+
+        <p class="hero-sub">
+            I create bold visuals, meaningful interfaces and
+            scroll-stopping digital experiences — combining
+            design, technology and storytelling.
+        </p>
+
+        <div class="hero-bottom">
+
+            <div class="buttons">
+
+                <a href="#work" class="btn btn-main">
+                    Explore My Work →
+                </a>
+
+                <a href="#contact" class="btn btn-main">
+                    Get In Touch
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         HERO PHOTO
+    ====================================================== -->
+
+    <div class="hero-photo">
+
+        <div class="photo-blob">
+
+            <img
+                src="tanushree.png"
+                alt="Tanushree Dey"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="section-label">
+        02 — Education
+    </div>
+
+    <h2 class="section-title">
+        Growing through <br>
+        every chapter.
+    </h2>
+
+
+    <div class="education">
+
+        <!-- EDUCATION 5 -->
+
+        <div class="education-card">
+
+            <div class="edu-year">
+                2020 — 2022
+            </div>
+
+            <div class="edu-content">
+
+                <h3>
+                    Class 9th & 10th
+                </h3>
+
+                <p>
+                    PM Shri Kendriya Vidyalaya Pachmarhi, Madhya Pradesh
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- EDUCATION 6 -->
+
+        <div class="education-card">
+
+            <div class="edu-year">
+                2022 — 2024
+            </div>
+
+            <div class="edu-content">
+
+                <h3>
+                    Class 11th & 12th
+                </h3>
+
+                <p>
+                    PM Shri Kendriya Vidyalaya 3BRD AFS, Chandigarh
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- EDUCATION 7 -->
+
+        <div class="education-card">
+
+            <div class="edu-year">
+                2024 — 2029
+            </div>
+
+            <div class="edu-content">
+
+                <h3>
+                    Bachelor of Science in<br>
+                    Data Science and Applications
+                </h3>
+
+                <p>
+                    Indian Institute of Technology, Madras
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="section-label">
+        03 — Experience
+    </div>
+
+    <h2 class="section-title">
+        Where I've<br>
+        made an impact.
+    </h2>
+
+
+    <div class="experience">
+
+        <div class="experience-item">
+
+            <div class="company">
+                IRIS SOCIETY IITM
+            </div>
+
+            <div class="role">
+                Graphic Designer
+            </div>
+
+            <div class="date">
+                MAY 2025 — PRESENT
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="company">
+                AWS CLOUD CLUB
+            </div>
+
+            <div class="role">
+                Graphic Designer
+            </div>
+
+            <div class="date">
+                MARCH 2025 — PRESENT
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="company">
+                AKORD SOCIETY IITM
+            </div>
+
+            <div class="role">
+                Graphic Designer
+            </div>
+
+            <div class="date">
+                SEPT 2025 — PRESENT
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="company">
+                ACCOMMODATION PARADOX
+            </div>
+
+            <div class="role">
+                Volunteer
+            </div>
+
+            <div class="date">
+                JULY 2025 — JUNE 2025
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="company">
+                PARADOX MULTIMEDIA
+            </div>
+
+            <div class="role">
+                Coordinator
+            </div>
+
+            <div class="date">
+                DEC 2025 — PRESENT
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="company">
+                SHUTTER SAFARI SAAVAN
+            </div>
+
+            <div class="role">
+                Event Head
+            </div>
+
+            <div class="date">
+                AUG 2025 — SEPT 2025
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-label">
+        04 — Skills
+    </div>
+
+    <h2 class="section-title">
+        A mix of<br>
+        creative + tech.
+    </h2>
+
+
+    <div class="skills">
+
+        <div class="skill">UI / UX Design</div>
+
+        <div class="skill">Graphic Design</div>
+
+        <div class="skill">Digital Designing</div>
+
+        <div class="skill">Social Media Design</div>
+
+        <div class="skill">Photography</div>
+
+        <div class="skill">Creative Direction</div>
+
+        <div class="skill">Python Programming</div>
+
+        <div class="skill">Flask Web Development</div>
+
+    </div>
+
+</section>
+
+    <!-- =================================================
+         WORK
+    ================================================== -->
+
+    <section id="work">
+
+
+        <div class="work-heading">
+
+
+            <div>
+
+                <div class="section-label">
+
+                    03 — Selected Work
+
+                </div>
+
+
+                <h2>
+
+                    MY
+                    <br>
+
+                    <span>WORK.</span>
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                A collection of my graphic designs,
+                posters, carousels, videos,
+                typography and visual experiments.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             INFINITE GALLERY
+        ============================================== -->
+
+        <div class="gallery-window">
+
+            <div
+                class="gallery-track"
+                id="galleryTrack"
+            >
+
+                <div class="gallery-loading">
+
+                    Loading work...
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SKILLS
+    ================================================== -->
+
+    <section id="skills">
+
+        <div class="section-label">
+
+            04 — Skills
+
+        </div>
+
+
+        <h2>
+
+            WHAT I
+            <br>
+
+            <span>DO.</span>
+
+        </h2>
+
+
+        <div class="skills-grid">
+
+            <div class="skill">
+                Graphic Design
+            </div>
+
+            <div class="skill">
+                Branding
+            </div>
+
+            <div class="skill">
+                Typography
+            </div>
+
+            <div class="skill">
+                Social Media Design
+            </div>
+
+            <div class="skill">
+                Poster Design
+            </div>
+
+            <div class="skill">
+                Visual Storytelling
+            </div>
+
+            <div class="skill">
+                Motion Graphics
+            </div>
+
+            <div class="skill">
+                Video Editing
+            </div>
+
+            <div class="skill">
+                Creative Direction
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+   <!-- =================================================
+     CONTACT
+================================================== -->
+
+<section
+    id="contact"
+    class="contact"
+>
+
+    <div class="section-label">
+        05 — Contact
+    </div>
+
+
+    <h2>
+        LET'S MAKE
+        <br>
+
+        <span>SOMETHING.</span>
+    </h2>
+
+
+    <!-- SOCIAL LINKS -->
+
+    <div class="social-links">
+
+        <!-- LinkedIn -->
+        <a
+            href="https://www.linkedin.com/in/tanushree-dey-614397259"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+        >
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+
+        <!-- Unstop -->
+        <a
+            href="https://unstop.com/u/24f30dey96807"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Unstop"
+        >
+            <span class="unstop-icon">Un</span>
+        </a>
+
+
+        <!-- Fiverr -->
+        <a
+            href="https://www.fiverr.com/graphixwithtanu"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Fiverr"
+        >
+            <span class="fiverr-icon">fi</span>
+        </a>
+
+
+        <!-- Gmail -->
+        <a
+            href="mailto:tanuxy2607@gmail.com"
+            aria-label="Email"
+        >
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+
+    </div>
+
+</section>
+
+    <!-- =================================================
+         FULLSCREEN VIEWER
+    ================================================== -->
+
+    <div
+        class="work-modal"
+        id="workModal"
+    >
+
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close"
+        >
+
+            ×
+
+        </button>
+
+
+        <button
+            class="modal-prev"
+            id="modalPrev"
+            aria-label="Previous"
+        >
+
+            ‹
+
+        </button>
+
+
+        <div
+            class="modal-content"
+            id="modalContent"
+        ></div>
+
+
+        <button
+            class="modal-next"
+            id="modalNext"
+            aria-label="Next"
+        >
+
+            ›
+
+        </button>
+
+
+        <div
+            class="modal-title"
+            id="modalTitle"
+        ></div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+
+        // =================================================
+        // GOOGLE APPS SCRIPT URL
+        // =================================================
+
+        const DRIVE_API =
+            "https://script.google.com/macros/s/AKfycbwqYLM2R0l0Otrf5f55KnTgRC3iZK1kx2AT_q5UnBjNUmyKHi01hTjx-c2RCFN3xZNw/exec";
+"";
+
+
+        // =================================================
+        // ELEMENTS
+        // =================================================
+
+        const gallery =
+            document.getElementById(
+                "galleryTrack"
+            );
+
+
+        const modal =
+            document.getElementById(
+                "workModal"
+            );
+
+
+        const modalContent =
+            document.getElementById(
+                "modalContent"
+            );
+
+
+        const modalTitle =
+            document.getElementById(
+                "modalTitle"
+            );
+
+
+        const modalClose =
+            document.getElementById(
+                "modalClose"
+            );
+
+
+        const modalPrev =
+            document.getElementById(
+                "modalPrev"
+            );
+
+
+        const modalNext =
+            document.getElementById(
+                "modalNext"
+            );
+
+
+
+        // =================================================
+        // GLOBAL DATA
+        // =================================================
+
+        let works = [];
+
+        let currentWork = 0;
+
+
+
+        // =================================================
+        // LOAD DRIVE
+        // =================================================
+
+        function loadDriveWorks() {
+
+
+            const script =
+                document.createElement(
+                    "script"
+                );
+
+
+            script.src =
+                DRIVE_API +
+                "?callback=displayGallery";
+
+
+            script.onerror =
+                function() {
+
+                    gallery.innerHTML = `
+
+                        <div class="gallery-loading">
+
+                            Could not load
+                            Google Drive work.
+
+                        </div>
+
+                    `;
+
+                };
+
+
+            document.body.appendChild(
+                script
+            );
+
+        }
+
+
+
+        // =================================================
+        // RECEIVE DRIVE DATA
+        // =================================================
+
+        function displayGallery(
+            data
+        ) {
+
+
+            works =
+                Array.isArray(data)
+                    ? data
+                    : [];
+
+
+            gallery.innerHTML =
+                "";
+
+
+            if (
+                works.length === 0
+            ) {
+
+                gallery.innerHTML = `
+
+                    <div class="gallery-loading">
+
+                        No supported files found.
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+
+            // =============================================
+            // GROUP 1
+            // =============================================
+
+            const groupOne =
+                document.createElement(
+                    "div"
+                );
+
+
+            groupOne.className =
+                "gallery-group";
+
+
+
+            // =============================================
+            // GROUP 2
+            // =============================================
+
+            const groupTwo =
+                document.createElement(
+                    "div"
+                );
+
+
+            groupTwo.className =
+                "gallery-group";
+
+
+
+            // =============================================
+            // CREATE CARDS
+            // =============================================
+
+            works.forEach(
+                function(
+                    work,
+                    index
+                ) {
+
+
+                    groupOne.appendChild(
+
+                        createWorkCard(
+                            work,
+                            index
+                        )
+
+                    );
+
+
+                    groupTwo.appendChild(
+
+                        createWorkCard(
+                            work,
+                            index
+                        )
+
+                    );
+
+                }
+            );
+
+
+
+            gallery.appendChild(
+                groupOne
+            );
+
+
+            gallery.appendChild(
+                groupTwo
+            );
+
+
+        }
+
+
+
+        // =================================================
+        // CREATE CARD
+        // =================================================
+
+        function createWorkCard(
+            work,
+            index
+        ) {
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "gallery-item";
+
+
+
+            // =============================================
+            // IMAGE
+            // =============================================
+
+            if (
+                work.type === "image"
+            ) {
+
+
+                const img =
+                    document.createElement(
+                        "img"
+                    );
+
+
+                img.className =
+                    "gallery-image";
+
+
+                img.src =
+                    work.thumbnail;
+
+
+                img.alt =
+                    work.name;
+
+
+                img.loading =
+                    "lazy";
+
+
+                card.appendChild(
+                    img
+                );
+
+
+                addBadge(
+                    card,
+                    "DESIGN"
+                );
+
+            }
+
+
+
+            // =============================================
+            // PDF
+            // =============================================
+
+            else if (
+                work.type === "pdf"
+            ) {
+
+
+                const pdf =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                pdf.className =
+                    "pdf-card";
+
+
+                pdf.innerHTML = `
+
+                    <div class="pdf-icon">
+
+                        PDF
+
+                    </div>
+
+                `;
+
+
+                card.appendChild(
+                    pdf
+                );
+
+
+                addBadge(
+                    card,
+                    "PDF / CAROUSEL"
+                );
+
+            }
+
+
+
+            // =============================================
+            // VIDEO
+            // =============================================
+
+            else if (
+                work.type === "video"
+            ) {
+
+
+                /*
+                 * We don't autoplay videos
+                 * inside the moving gallery.
+                 *
+                 * Instead we create a
+                 * clean video card.
+                 */
+
+
+                const video =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                video.className =
+                    "pdf-card";
+
+
+                video.innerHTML = `
+
+                    <div class="video-play">
+
+                        ▶
+
+                    </div>
+
+                `;
+
+
+                card.appendChild(
+                    video
+                );
+
+
+                addBadge(
+                    card,
+                    "VIDEO"
+                );
+
+            }
+
+
+
+            // =============================================
+            // FILE NAME
+            // =============================================
+
+            const label =
+                document.createElement(
+                    "div"
+                );
+
+
+            label.className =
+                "gallery-label";
+
+
+            label.textContent =
+                cleanFileName(
+                    work.name
+                );
+
+
+            card.appendChild(
+                label
+            );
+
+
+
+            // =============================================
+            // CLICK
+            // =============================================
+
+            card.addEventListener(
+                "click",
+                function() {
+
+                    openViewer(
+                        index
+                    );
+
+                }
+            );
+
+
+            return card;
+
+        }
+
+
+
+        // =================================================
+        // BADGE
+        // =================================================
+
+        function addBadge(
+            card,
+            text
+        ) {
+
+
+            const badge =
+                document.createElement(
+                    "div"
+                );
+
+
+            badge.className =
+                "work-type";
+
+
+            badge.textContent =
+                text;
+
+
+            card.appendChild(
+                badge
+            );
+
+        }
+
+
+
+        // =================================================
+        // CLEAN FILE NAME
+        // =================================================
+
+        function cleanFileName(
+            filename
+        ) {
+
+
+            return filename
+
+                .replace(
+                    /\.[^/.]+$/,
+                    ""
+                )
+
+                .replace(
+                    /[_-]+/g,
+                    " "
+                )
+
+                .replace(
+                    /\s+/g,
+                    " "
+                )
+
+                .trim();
+
+        }
+
+
+
+        // =================================================
+        // OPEN VIEWER
+        // =================================================
+
+        function openViewer(
+            index
+        ) {
+
+
+            currentWork =
+                index;
+
+
+            renderViewer();
+
+
+            modal.classList.add(
+                "active"
+            );
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+
+        // =================================================
+        // RENDER VIEWER
+        // =================================================
+
+        function renderViewer() {
+
+
+            const work =
+                works[currentWork];
+
+
+            if (!work) {
+
+                return;
+
+            }
+
+
+            modalContent.innerHTML =
+                "";
+
+
+            modalTitle.textContent =
+                cleanFileName(
+                    work.name
+                );
+
+
+
+            // =============================================
+            // IMAGE
+            // =============================================
+
+            if (
+                work.type === "image"
+            ) {
+
+
+                const img =
+                    document.createElement(
+                        "img"
+                    );
+
+
+                img.src =
+                    work.thumbnail;
+
+
+                img.alt =
+                    work.name;
+
+
+                modalContent.appendChild(
+                    img
+                );
+
+            }
+
+
+
+            // =============================================
+            // PDF
+            // =============================================
+
+            else if (
+                work.type === "pdf"
+            ) {
+
+
+                const iframe =
+                    document.createElement(
+                        "iframe"
+                    );
+
+
+                iframe.src =
+                    work.preview;
+
+
+                iframe.allow =
+                    "autoplay";
+
+
+                modalContent.appendChild(
+                    iframe
+                );
+
+            }
+
+
+
+            // =============================================
+            // VIDEO
+            // =============================================
+
+            else if (
+                work.type === "video"
+            ) {
+
+
+                const iframe =
+                    document.createElement(
+                        "iframe"
+                    );
+
+
+                iframe.src =
+                    work.preview;
+
+
+                iframe.allow =
+                    "autoplay; fullscreen";
+
+
+                iframe.allowFullscreen =
+                    true;
+
+
+                modalContent.appendChild(
+                    iframe
+                );
+
+            }
+
+        }
+
+
+
+        // =================================================
+        // CLOSE VIEWER
+        // =================================================
+
+        function closeViewer() {
+
+
+            modal.classList.remove(
+                "active"
+            );
+
+
+            modalContent.innerHTML =
+                "";
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+
+        // =================================================
+        // NEXT
+        // =================================================
+
+        function nextWork() {
+
+
+            if (
+                works.length === 0
+            ) {
+
+                return;
+
+            }
+
+
+            currentWork++;
+
+
+            if (
+                currentWork >=
+                works.length
+            ) {
+
+                currentWork = 0;
+
+            }
+
+
+            renderViewer();
+
+        }
+
+
+
+        // =================================================
+        // PREVIOUS
+        // =================================================
+
+        function previousWork() {
+
+
+            if (
+                works.length === 0
+            ) {
+
+                return;
+
+            }
+
+
+            currentWork--;
+
+
+            if (
+                currentWork < 0
+            ) {
+
+                currentWork =
+                    works.length - 1;
+
+            }
+
+
+            renderViewer();
+
+        }
+
+
+
+        // =================================================
+        // BUTTON EVENTS
+        // =================================================
+
+        modalClose.addEventListener(
+            "click",
+            closeViewer
+        );
+
+
+        modalNext.addEventListener(
+            "click",
+            nextWork
+        );
+
+
+        modalPrev.addEventListener(
+            "click",
+            previousWork
+        );
+
+
+
+        // =================================================
+        // CLICK OUTSIDE
+        // =================================================
+
+        modal.addEventListener(
+            "click",
+            function(event) {
+
+
+                if (
+                    event.target ===
+                    modal
+                ) {
+
+                    closeViewer();
+
+                }
+
+            }
+        );
+
+
+
+        // =================================================
+        // KEYBOARD
+        // =================================================
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+
+                if (
+                    !modal.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    closeViewer();
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowRight"
+                ) {
+
+                    nextWork();
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowLeft"
+                ) {
+
+                    previousWork();
+
+                }
+
+            }
+        );
+
+
+
+        // =================================================
+        // START
+        // =================================================
+
+        loadDriveWorks();
+
+
+    </script>
+
+
+</body>
+
+</html>
